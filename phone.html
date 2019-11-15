@@ -1,0 +1,23 @@
+<head></head>
+
+<body>
+    <label >Enter your phone</label><br>
+    <input id='number'  type='range'  min="1000000000" max="9999999999">
+    <div id='output'>(555) 555-5555</div>
+</body>
+
+<script>
+var number = document.getElementById('number')
+var value = document.getElementById('output')
+
+function numFormat(number){
+
+    return `(${number.slice(0,3)}) ${number.slice(3,6)}-${number.slice(6,10)}`
+}
+
+number.oninput = () => {
+    var doIt = numFormat(number.value)
+    value.innerText = doIt
+    }
+
+</script>
